@@ -29,16 +29,9 @@ let signaturePad;
 window.onload = function(){
 
 const canvas = document.getElementById("signature");
-  // 👉 mobile perfect fit
-  const ratio = Math.max(window.devicePixelRatio || 1, 1);
-
-  canvas.width = canvas.offsetWidth * ratio;
-  canvas.height = 150 * ratio;
-
-  canvas.getContext("2d").scale(ratio, ratio);
-
-  signaturePad = new SignaturePad(canvas);
-
+signaturePad = new SignaturePad(canvas);
+  canvas.width = canvas.offsetWidth;
+  canvas.height = 150;
   
 }
 function clearSign(){
