@@ -30,7 +30,7 @@ window.onload = function(){
 
   const canvas = document.getElementById("signature");
 
-  // ✅ pehle size set karo
+  // 👉 STEP 1: size set FIRST
   const ratio = Math.max(window.devicePixelRatio || 1, 1);
 
   canvas.width = canvas.offsetWidth * ratio;
@@ -38,15 +38,14 @@ window.onload = function(){
 
   canvas.getContext("2d").scale(ratio, ratio);
 
-  // ✅ phir SignaturePad banao
-  signaturePad = new SignaturePad(canvas);
+  // 👉 STEP 2: then create signature pad
+  signaturePad = new SignaturePad(canvas, {
+    minWidth: 1,
+    maxWidth: 2.5,
+    penColor: "black"
+  });
 
-}
-signaturePad = new SignaturePad(canvas, {
-  minWidth: 1,
-  maxWidth: 2.5,
-  penColor: "black"
-});
+};
 
 function submitSign(){
 
