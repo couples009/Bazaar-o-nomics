@@ -28,17 +28,25 @@ let signaturePad;
 
 window.onload = function(){
 
-const canvas = document.getElementById("signature");
-signaturePad = new SignaturePad(canvas);
+  const canvas = document.getElementById("signature");
+
+  // ✅ pehle size set karo
+  const ratio = Math.max(window.devicePixelRatio || 1, 1);
+
+  canvas.width = canvas.offsetWidth * ratio;
+  canvas.height = 150 * ratio;
+
+  canvas.getContext("2d").scale(ratio, ratio);
+
+  // ✅ phir SignaturePad banao
+  signaturePad = new SignaturePad(canvas);
 
 }
-function clearSign(){
-signaturePad.clear();
-}
-
-function clearSign(){
-signaturePad.clear();
-}
+signaturePad = new SignaturePad(canvas, {
+  minWidth: 1,
+  maxWidth: 2.5,
+  penColor: "black"
+});
 
 function submitSign(){
 
