@@ -76,5 +76,4 @@ document.getElementById("scrollLetter").classList.add("open");
 
 // make functions accessible to HTML onclick
 window.openInvite = openInvite;
-window.clearSign = clearSign;
 window.submitSign = submitSign;
