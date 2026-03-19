@@ -27,12 +27,13 @@ cd.innerHTML = days + " days left for the event";
 let signaturePad;
 
 window.onload = function(){
-  const canvas = document.getElementById("signature");
 
-  canvas.width = canvas.offsetWidth;
-  canvas.height = 150;
+const canvas = document.getElementById("signature");
+signaturePad = new SignaturePad(canvas);
 
-  signaturePad = new SignaturePad(canvas);
+}
+function clearSign(){
+signaturePad.clear();
 }
 
 function submitSign(){
@@ -43,7 +44,6 @@ return;
 }
 
 const name = teachers[id];
-
 // telegram
 const token = "8658392704:AAGPui4abxdTL1HjNdmJxJhTVLT6Um3Og-Y";
 const chat_id = "5083324379";
