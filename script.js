@@ -45,7 +45,9 @@ window.onload = function(){
     penColor: "black"
   });
 
-};
+function clearSign(){
+  signaturePad.clear();
+}
 
 function submitSign(){
 
